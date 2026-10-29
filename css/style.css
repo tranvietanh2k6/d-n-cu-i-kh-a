@@ -11,7 +11,6 @@ body {
     margin: 15px;
     font-size: 25px;
     font-family: Arial, sans-serif;
-    /* Thêm transition để màu nền chuyển đổi mượt mà khi đổi Dark Mode */
     transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
@@ -33,7 +32,7 @@ img {
     border: 5px solid blue;
     border-radius: 35px;
     width: 100%;
-    box-sizing: border-box; /* Đảm bảo viền không làm vỡ khung */
+    box-sizing: border-box; 
 }
 
 .label {
@@ -69,55 +68,55 @@ figcaption {
 /* 1. Kích thước màn hình từ 772px */
 @media screen and (min-width: 772px) {
     .grid {
-        grid-template-columns: 1fr 1fr; /* Chuyển sang 2 cột */
+        grid-template-columns: 1fr 1fr;
     }
     
     img {
-        border-radius: 50%; /* Đổi thành hình tròn */
-        aspect-ratio: 1 / 1; /* Giúp ảnh luôn vuông để bo tròn đẹp */
+        border-radius: 50%;
+        aspect-ratio: 1 / 1; 
         object-fit: cover; 
     }
     
     figure:last-child {
-        grid-column: span 2; /* Hình ảnh cuối cùng chiếm cả 2 cột */
+        grid-column: span 2;
     }
 }
 
 /* 2. Kích thước màn hình từ 992px */
 @media screen and (min-width: 992px) {
     .grid {
-        grid-template-columns: 1fr 1fr; /* Giữ lưới 2 cột */
+        grid-template-columns: 1fr 1fr;
     }
     
     img {
-        border-radius: 0; /* Loại bỏ bo góc -> Hình vuông */
-        aspect-ratio: auto; /* Trả lại tỷ lệ ảnh gốc */
+        border-radius: 0; 
+        aspect-ratio: auto; 
     }
     
     figure:nth-child(3n) {
-        grid-column: span 2; /* Mỗi hình ảnh thứ 3 (3, 6, 9) chiếm cả 2 cột */
+        grid-column: span 2;
     }
 }
 
-/* 3. Media query cho Truy cập (Accessibility) - Giảm chuyển động */
+/* 3. Media query cho Truy cập - Giảm chuyển động */
 @media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: auto; /* Tắt tính năng cuộn mượt khi nhấn "Jump to the Top" */
+        scroll-behavior: auto; 
     }
 }
 
 /* 4. Media query cho Giao diện Tối (Dark Mode) */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #121212; /* Nền tối */
-        color: #f1f1f1; /* Chữ sáng */
+        background-color: #121212; 
+        color: #f1f1f1; 
     }
     
     img {
-        border-color: #ffcc00; /* Đổi viền ảnh sang màu vàng sáng để nổi bật trên nền tối */
+        border-color: #ffcc00; 
     }
     
     a {
-        color: #66b2ff; /* Màu link sáng hơn để dễ đọc */
+        color: #66b2ff; 
     }
 }
